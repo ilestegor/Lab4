@@ -32,5 +32,6 @@ public class Main {
         Plant plant = new Plant("Цветы", plantJuice);
         System.out.println(plant.getName() + " росли в " + place.getName() + "e");
         System.out.println(plant.lookAlike(plant, "фикусы"));
+        System.out.println("hello");
     }
 }
