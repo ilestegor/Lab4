@@ -1,0 +1,140 @@
+@startuml
+!pragma layout smetana
+
+class Main{
++Main()
++main(String[] args)
+}
+
+Main ..> Event
+Main ..> Baby
+Main ..> ShortPerson
+Main ..> Human
+Main ..> Place
+Main ..> Plant
+
+
+class Event{
+- eventName: String
+- emotion: String
++Event(eventName: String)
++resultEvent(eventName: String, emotion: String)
++getName(): String
++getEmotion(): String
++toString(): String
++hashCode(): int
++equals(Object): boolean
+}
+class Emotion{
+-typeOfEmotion: String
++Emotion(typeOfEmotion: String)
++getEmotion(): String
+}
+abstract class SmallPerson{
+- name: String
+- ability: String
++SmallPerson(name: String, ability: String)
++getName(): String
++getAbility(): String
++doStuff(String name, String ability): String
+}
+class Baby extends SmallPerson{
+- currentEmotion: Emotion
++Baby(name: String)
++doStuff(String name, String ability)
++equals(Object): boolean
++toString(): String
++hashCode(): int
+}
+class ShortPerson extends SmallPerson{
+- currentEmotion: Emotion
++ShortPerson(name: String)
++doStuff(String name, String ability)
++equals(Object): boolean
++toString(): String
++hashCode(): int
+}
+Emotion --o Baby
+Emotion --o ShortPerson
+Emotion --o Human
+
+
+interface Sayable{
++say(String name, String action): void
+}
+interface Thinkable{
++think(String name, String action, String durationOfThinking): void
+}
+interface Doable{
++do(String name, String action, String target): void
+}
+interface Explainable{
++explain(String name, String action): void
+}
+enum WeatherType{
+SUNNY,
+WINDY,
+RAINY,
+FOGGY,
+SNOWY
+}
+class Human implements Sayable, Explainable, Thinkable, Doable, AbleToModify{
+- name: String
+-currentEmotion: Emotion
++Person(name: String, currentEmotion: Emotion)
++getName(): String
++think(String name, String action, String durationOfThinking): String
++do(String name, String action, String target): String
++say(String name, String action): String
++modifyPlant(Plant plant)
++equals(Object): boolean
++toString(): String
++hashCode(): int
+}
+WeatherType --* Place
+interface AbleToModify{
++modifyPlant(Modifiable)
+}
+class Place{
+-name: String
+-weatherType: WeatherType
++Place(name: String, weatherType: WeatherType)
++equals(Object): boolean
++toString(): String
++hashCode(): int
+}
+Place ..> Human
+class Plant implements Modifiable{
+-name: String
+-plantjuice: PlantJuice
++Plant(name: String, plantjuice: PlantJuice)
++lookAlike(String object)
++equals(Object): boolean
++toString(): String
++hashCode(): int
+}
+interface Modifiable{
++modify()
+}
+Human --> Plant
+Plant --> Place
+enum Density{
+LOW,
+MEDIUM,
+HIGH
+}
+Density --* PlantJuice
+PlantJuice --* Plant
+class PlantJuice{
+- color: String
+- levelOfDensity: Density
+- flowType: Density
++Juice(color: String, levelOfDensity: Density, flowType: Density)
++thicken(PlantJuice plantjuice)
++flow(PlantJuice plantjuice)
++transformIntoRubber(PlantJuice plantjuice): String
++equals(Object): boolean
++toString(): String
++hashCode(): int
+}
+@enduml
