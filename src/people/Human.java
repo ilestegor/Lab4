@@ -1,6 +1,9 @@
 package people;
 import emotion.*;
 import interfaces.*;
+
+import java.util.Objects;
+
 public class Human implements Explainable, Sayable, Thinkable, Doable, AbleToModify {
     private String name;
     private Emotion currentEmotion;
@@ -42,5 +45,24 @@ public class Human implements Explainable, Sayable, Thinkable, Doable, AbleToMod
         return currentEmotion;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Human human)) return false;
+        return modifiedPlant == human.modifiedPlant && Objects.equals(getName(), human.getName()) && Objects.equals(getCurrentEmotion(), human.getCurrentEmotion());
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getCurrentEmotion(), modifiedPlant);
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "name='" + name + '\'' +
+                ", currentEmotion=" + currentEmotion +
+                ", modifiedPlant=" + modifiedPlant +
+                '}';
+    }
 }

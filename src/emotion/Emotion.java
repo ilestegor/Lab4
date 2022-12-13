@@ -3,6 +3,8 @@ package emotion;
 import places.Place;
 import places.WeatherType;
 
+import java.util.Objects;
+
 public class Emotion {
     private String typeOfEmotion;
     public Emotion(String typeOfEmotion){
@@ -27,6 +29,18 @@ public class Emotion {
 
     public String getTypeOfEmotion(){
         return typeOfEmotion;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Emotion emotion)) return false;
+        return Objects.equals(getTypeOfEmotion(), emotion.getTypeOfEmotion());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTypeOfEmotion());
     }
 
     @Override
