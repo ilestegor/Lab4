@@ -9,8 +9,8 @@ public class Event {
     public Event(String name){
         this.eventName = name;
     }
-    public String resultEvent(String name, String emotion){
-        return name + emotion;
+    public void resultEvent(String emotion){
+        System.out.println(getEventName() + emotion);
     }
 
     public String getEmotion() {
@@ -35,7 +35,7 @@ public class Event {
 
     @Override
     public String toString() {
-        return "Event{" +
+        return "event.Event{" +
                 "eventName='" + eventName + '\'' +
                 ", emotion='" + emotion + '\'' +
                 '}';

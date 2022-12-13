@@ -1,15 +1,18 @@
 package people;
-
+import emotion.*;
 import interfaces.*;
-
 public class Human implements Explainable, Sayable, Thinkable, Doable, AbleToModify {
     private String name;
-    private String currentEmotion;
+    private Emotion currentEmotion;
+    private boolean modifiedPlant;
 
-    public Human(String name, String currentEmotion){
+    public Human(String name, Emotion currentEmotion, boolean modifiedPlant){
         this.name = name;
         this.currentEmotion = currentEmotion;
+        this.modifiedPlant = modifiedPlant;
     }
+
+
 
     public String explain(String name, String action){
         return name + action;
@@ -24,15 +27,20 @@ public class Human implements Explainable, Sayable, Thinkable, Doable, AbleToMod
         return name + action + target;
     }
 
-    public String modifyPlant(Modifiable modifiable) {
-        return "h";
-    }
+    public void modifyStuff(Modifiable modifiable) {
+        if (modifiedPlant){
+            modifiable.modify();
+        }
 
+    }
     public String getName() {
         return name;
     }
 
-    public String getCurrentEmotion() {
+    public Emotion getCurrentEmotion() {
+        System.out.println(currentEmotion);
         return currentEmotion;
     }
+
+
 }

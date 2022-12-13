@@ -1,7 +1,5 @@
 package interfaces;
 
-import people.Human;
-
 public interface AbleToModify{
-    String modifyPlant(Modifiable modifiable);
+    void modifyStuff(Modifiable modifiable);
 }

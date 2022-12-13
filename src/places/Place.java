@@ -1,8 +1,5 @@
 package places;
 
-
-import people.Emotion;
-
 import java.util.Objects;
 
 public class Place {
@@ -14,18 +11,15 @@ public class Place {
         this.weatherType = weatherType;
     }
 
-    public String changeEmotion(WeatherType weatherType){
-        if (WeatherType.FOGGY == weatherType){
-           return "Sad";
-        } else if (WeatherType.SUNNY == weatherType){
-            return "Happy";
-        }
-        return "";
-    }
 
     public String getName(){
         return name;
     }
+
+    public WeatherType getWeatherType() {
+        return weatherType;
+    }
+
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;
@@ -40,7 +34,7 @@ public class Place {
 
     @Override
     public String toString() {
-        return "Place{" +
+        return "places.Place{" +
                 "name='" + name + '\'' +
                 ", weatherType=" + weatherType +
                 '}';

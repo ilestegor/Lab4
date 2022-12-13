@@ -1,9 +1,7 @@
-package plants;
-
-import interfaces.Modifiable;
+package plant;
 
 import java.util.Objects;
-
+import interfaces.Modifiable;
 public class Plant implements Modifiable {
     private String name;
     private PlantJuice plantJuice;
@@ -12,8 +10,8 @@ public class Plant implements Modifiable {
         this.name = name;
         this.plantJuice = plantJuice;
     }
-    public String lookAlike(Plant plant, String object){
-        return plant.name + " похожи на "+ object;
+    public void lookAlike(Plant plant, String object){
+        System.out.println(plant.name + " похожи на" + object);;
     }
 
     public String getName(){
@@ -34,13 +32,15 @@ public class Plant implements Modifiable {
 
     @Override
     public String toString() {
-        return "Plant{" +
+        return "plant.Plant{" +
                 "name='" + name + '\'' +
                 ", plantJuice=" + plantJuice +
                 '}';
     }
 
-    public String modify() {
-       return "Plant was modified";
+    public void modify() {
+       plantJuice.flow(plantJuice);
+       plantJuice.thicken(plantJuice);
+       plantJuice.transformationIntoRubber(plantJuice);
     }
 }

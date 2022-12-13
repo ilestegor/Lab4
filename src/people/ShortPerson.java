@@ -1,21 +1,25 @@
 package people;
-import java.util.Objects;
 
-public class ShortPerson extends SmallPerson{
+import java.util.Objects;
+import emotion.*;
+
+public class ShortPerson extends SmallPerson {
     private Emotion currentEmotion;
-    public ShortPerson(String name, String ability){
-        super(name, ability);
+    public ShortPerson(String name, Emotion currentEmotion){
+        super(name);
+        this.currentEmotion = currentEmotion;
     }
 
 
 
-    public String doStuff(String name, String ability, String target){
-        return name + ability + target;
+    public void doStuff(String name, String ability, String target){
+        System.out.println(getName() + ability + target);
     }
 
     public Emotion getCurrentEmotion() {
         return currentEmotion;
     }
+
 
     @Override
     public boolean equals(Object object) {
@@ -31,7 +35,7 @@ public class ShortPerson extends SmallPerson{
 
     @Override
     public String toString() {
-        return "ShortPerson{" +
+        return "people.ShortPerson{" +
                 "currentEmotion=" + currentEmotion +
                 '}';
     }

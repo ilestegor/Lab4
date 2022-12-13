@@ -1,4 +1,4 @@
-package plants;
+package plant;
 
 import java.util.Objects;
 
@@ -11,20 +11,20 @@ public class PlantJuice {
         this.levelOfDensity = levelOfDensity;
 
     }
-    public String flow(PlantJuice plantJuice){
+    public void flow(PlantJuice plantJuice){
         if (Density.LOW == levelOfDensity){
-            return  "Сок вытикает медленно";
+            System.out.println("Человек порезал растение и сок вытикает медленно");
         } else if (Density.MEDIUM == levelOfDensity){
-            return "Сок вытекает умеренно";
+            System.out.println("Человек порезал растение и сок вытекает умеренно");
         } else {
-            return "Сок вытекает медленно";
+            System.out.println("Человек порезал растение и сок вытекает медленно");
         }
     }
-    public String thicken(PlantJuice plantJuice){
-        return "Сок густеет";
+    public void thicken(PlantJuice plantJuice){
+        System.out.println("Сок постепенно густеет");
     }
-    public String transformationIntoRubber(PlantJuice plantJuice){
-        return "Сок превращается в резину";
+    public void transformationIntoRubber(PlantJuice plantJuice){
+        System.out.println("Сок превращается в резину, из которой можно делать мячи и колоши");
     }
 
     @Override
@@ -41,7 +41,7 @@ public class PlantJuice {
 
     @Override
     public String toString() {
-        return "PlantJuice{" +
+        return "plant.PlantJuice{" +
                 "color='" + color + '\'' +
                 ", levelOfDensity=" + levelOfDensity +
                 '}';
