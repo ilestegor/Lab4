@@ -15,27 +15,6 @@ public class Baby extends SmallPerson {
         } else{
             System.out.println(getName() + ability + target);
         }
-
-    }
-    public void setCurrentEmotion(Place place) {
-        switch (place.getWeatherType()){
-            case SUNNY -> {
-                currentEmotion.setTypeOfEmotion(" Веселое");
-            }
-            case FOGGY -> {
-                currentEmotion.setTypeOfEmotion(" Мрачное");
-            }
-            case RAINY -> {
-                currentEmotion.setTypeOfEmotion(" Радостное");
-            }
-            case SNOWY -> {
-                currentEmotion.setTypeOfEmotion(" Зимнее");
-            }
-            case WINDY -> {
-                currentEmotion.setTypeOfEmotion(" Ужасное");
-            }
-
-        }
     }
 
     public Emotion getCurrentEmotion() {

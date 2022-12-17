@@ -1,5 +1,6 @@
 package person;
 import emotion.Emotion;
+import place.Place;
 
 public abstract class SmallPerson {
     private String name;
@@ -11,6 +12,25 @@ public abstract class SmallPerson {
         this.currentEmotion = currentEmotion;
     }
 
+    public void setCurrentEmotion(Place place) {
+        switch (place.getWeatherType()){
+            case SUNNY -> {
+                currentEmotion.setTypeOfEmotion(" Веселое");
+            }
+            case FOGGY -> {
+                currentEmotion.setTypeOfEmotion(" Грустное");
+            }
+            case RAINY -> {
+                currentEmotion.setTypeOfEmotion(" Загадочное:)");
+            }
+            case SNOWY -> {
+                currentEmotion.setTypeOfEmotion(" Зимнее");
+            }
+            case WINDY -> {
+                currentEmotion.setTypeOfEmotion(" Ужасное");
+            }
+        }
+    }
     public abstract void doStuff(String name, String ability, String target);
 
     public String getName(){

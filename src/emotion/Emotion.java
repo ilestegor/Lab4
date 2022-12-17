@@ -15,7 +15,6 @@ public class Emotion {
         System.out.println(typeOfEmotion);
         return typeOfEmotion;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
