@@ -1,8 +1,4 @@
 package emotion;
-
-import places.Place;
-import places.WeatherType;
-
 import java.util.Objects;
 
 public class Emotion {
@@ -11,23 +7,12 @@ public class Emotion {
        this.typeOfEmotion = typeOfEmotion;
     }
 
-
-
-    public void setTypeOfEmotion(Place place) {
-       if (WeatherType.SUNNY == place.getWeatherType()){
-           this.typeOfEmotion = "Веселое";
-       } else if (WeatherType.FOGGY == place.getWeatherType()){
-           this.typeOfEmotion = "Грустное";
-       } else if (WeatherType.RAINY == place.getWeatherType()){
-           this.typeOfEmotion = "Мрачное";
-       }  else if (WeatherType.SNOWY == place.getWeatherType()){
-           this.typeOfEmotion = "Зимнее";
-       } else if (WeatherType.WINDY == place.getWeatherType()){
-           this.typeOfEmotion = "Ужасное";
-       }
+    public void setTypeOfEmotion(String typeOfEmotion) {
+        this.typeOfEmotion = typeOfEmotion;
     }
 
     public String getTypeOfEmotion(){
+        System.out.println(typeOfEmotion);
         return typeOfEmotion;
     }
 
@@ -45,6 +30,6 @@ public class Emotion {
 
     @Override
     public String toString() {
-        return "Настроение" + typeOfEmotion;
+        return " настроение" +  typeOfEmotion;
     }
 }

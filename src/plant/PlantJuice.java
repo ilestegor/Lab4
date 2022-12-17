@@ -12,12 +12,16 @@ public class PlantJuice {
 
     }
     public void flow(PlantJuice plantJuice){
-        if (Density.LOW == levelOfDensity){
-            System.out.println("Человек порезал растение и сок вытикает медленно");
-        } else if (Density.MEDIUM == levelOfDensity){
-            System.out.println("Человек порезал растение и сок вытекает умеренно");
-        } else {
-            System.out.println("Человек порезал растение и сок вытекает медленно");
+        switch (levelOfDensity){
+            case LOW -> {
+                System.out.println("Человек порезал растение и сок вытикает быстро");
+            }
+            case MEDIUM -> {
+                System.out.println("Человек порезал растение и сок вытекает умеренно");
+            }
+            case HIGH -> {
+                System.out.println("Человек порезал растение и сок вытекает медленно");
+            }
         }
     }
     public void thicken(PlantJuice plantJuice){

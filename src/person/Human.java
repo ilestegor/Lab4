@@ -1,6 +1,7 @@
-package people;
+package person;
 import emotion.*;
 import interfaces.*;
+import place.Place;
 
 import java.util.Objects;
 
@@ -16,6 +17,26 @@ public class Human implements Explainable, Sayable, Thinkable, Doable, AbleToMod
     }
 
 
+    public void setCurrentEmotion(Place place) {
+        switch (place.getWeatherType()){
+            case SUNNY -> {
+                currentEmotion.setTypeOfEmotion("Веселое");
+            }
+            case FOGGY -> {
+                currentEmotion.setTypeOfEmotion(" Згадочное:)");
+            }
+            case RAINY -> {
+                currentEmotion.setTypeOfEmotion("Мрачное");
+            }
+            case SNOWY -> {
+                currentEmotion.setTypeOfEmotion("Зимнее");
+            }
+            case WINDY -> {
+                currentEmotion.setTypeOfEmotion("Ужасное");
+            }
+
+        }
+    }
 
     public String explain(String name, String action){
         return name + action;
