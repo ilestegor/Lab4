@@ -1,24 +1,22 @@
 package person;
 import emotion.*;
-import interfaces.*;
-import place.Place;
+import interfaces.Doable;
+import interfaces.Encounterable;
+import place.Town;
 
 import java.util.Objects;
 
-public class Human implements Explainable, Sayable, Thinkable, Doable, AbleToModify {
-    private String name;
-    private Emotion currentEmotion;
-    private boolean modifiedPlant;
+public abstract class Human implements Doable {
+    protected String name;
+    protected Emotion currentEmotion;
 
-    public Human(String name, Emotion currentEmotion, boolean modifiedPlant){
+
+    public Human(String name, Emotion currentEmotion){
         this.name = name;
         this.currentEmotion = currentEmotion;
-        this.modifiedPlant = modifiedPlant;
     }
-
-
-    public void setCurrentEmotion(Place place) {
-        switch (place.getWeatherType()){
+    public void setCurrentEmotion(Town town) {
+        switch (town.getWeatherType()){
             case SUNNY -> {
                 currentEmotion.setTypeOfEmotion("Веселое");
             }
@@ -38,44 +36,24 @@ public class Human implements Explainable, Sayable, Thinkable, Doable, AbleToMod
         }
     }
 
-    public String explain(String name, String action){
-        return name + action;
-    }
-    public String say(String name, String action){
-        return name + action;
-    }
-    public String think(String name, String action, String durationOfThinking){
-        return name + action + durationOfThinking;
-    }
-    public String doTo(String name, String action, String target){
-        return name + action + target;
-    }
-
-    public void modifyStuff(Modifiable modifiable) {
-        if (modifiedPlant){
-            modifiable.modify();
-        }
-
-    }
-    public String getName() {
+    public  String getName() {
         return name;
     }
-
-    public Emotion getCurrentEmotion() {
-        System.out.println(currentEmotion);
-        return currentEmotion;
+    public String doTo(String name, String action, String target) {
+        System.out.println(name + action + target);
+        return name + action + target;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Human human)) return false;
-        return modifiedPlant == human.modifiedPlant && Objects.equals(getName(), human.getName()) && Objects.equals(getCurrentEmotion(), human.getCurrentEmotion());
+        return Objects.equals(getName(), human.getName()) && Objects.equals(currentEmotion, human.currentEmotion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getCurrentEmotion(), modifiedPlant);
+        return Objects.hash(name, currentEmotion);
     }
 
     @Override
@@ -83,7 +61,7 @@ public class Human implements Explainable, Sayable, Thinkable, Doable, AbleToMod
         return "Human{" +
                 "name='" + name + '\'' +
                 ", currentEmotion=" + currentEmotion +
-                ", modifiedPlant=" + modifiedPlant +
+                ", modifiedPlant=" +
                 '}';
     }
 }

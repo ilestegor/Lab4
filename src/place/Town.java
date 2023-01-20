@@ -2,11 +2,11 @@ package place;
 
 import java.util.Objects;
 
-public class Place {
+public class Town {
     private String name;
     private WeatherType weatherType;
 
-    public Place(String name, WeatherType weatherType){
+    public Town(String name, WeatherType weatherType){
         this.name = name;
         this.weatherType = weatherType;
     }
@@ -23,8 +23,8 @@ public class Place {
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;
-        if (!(object instanceof Place place)) return false;
-        return Objects.equals(name, place.name) && weatherType == place.weatherType;
+        if (!(object instanceof Town town)) return false;
+        return Objects.equals(name, town.name) && weatherType == town.weatherType;
     }
 
     @Override

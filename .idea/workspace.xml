@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cc50115e-bade-4148-8a2b-e2958dbe670f" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/out/production/Lab3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab3/UML/NewUML.puml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/UML/NewUML.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab3/event/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab3/event/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UML/NewUML.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UML/NewUML.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/event/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/event/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/Baby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Baby.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/ShortPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/ShortPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/SmallPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/SmallPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/place/Town.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/place/Town.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plant/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plant/Plant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plant/PlantJuice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plant/PlantJuice.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="UML Sequence" />
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IflCgm4f5LgwDHdQQYDPGpDkI9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Sequence&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ilestegor/Desktop/Универ/1курс/1сем/Прога_1курс/Lab4&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/UML" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc50115e-bade-4148-8a2b-e2958dbe670f" name="Changes" comment="" />
+      <created>1670580394944</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670580394944</updated>
+      <workItem from="1670580396057" duration="327000" />
+      <workItem from="1670580746030" duration="17000" />
+      <workItem from="1670772281282" duration="8980000" />
+      <workItem from="1670785635733" duration="237000" />
+      <workItem from="1670788363867" duration="1523000" />
+      <workItem from="1670789894291" duration="4562000" />
+      <workItem from="1670794548525" duration="2000" />
+      <workItem from="1670794561676" duration="3000" />
+      <workItem from="1670872707843" duration="6999000" />
+      <workItem from="1670881569939" duration="158000" />
+      <workItem from="1670881730305" duration="484000" />
+      <workItem from="1670932519229" duration="1237000" />
+      <workItem from="1670955706784" duration="14713000" />
+      <workItem from="1670970629567" duration="236000" />
+      <workItem from="1671285381045" duration="5809000" />
+      <workItem from="1671297116414" duration="555000" />
+      <workItem from="1671300810700" duration="849000" />
+      <workItem from="1671385812289" duration="407000" />
+      <workItem from="1671431233902" duration="1400000" />
+      <workItem from="1671458076698" duration="1816000" />
+      <workItem from="1671783173513" duration="725000" />
+      <workItem from="1672932193584" duration="697000" />
+      <workItem from="1672937351936" duration="1000" />
+      <workItem from="1672937392886" duration="10000" />
+      <workItem from="1672937405160" duration="2300000" />
+      <workItem from="1672940675837" duration="12604000" />
+      <workItem from="1672995302229" duration="18002000" />
+      <workItem from="1673042711503" duration="23000" />
+      <workItem from="1673252624975" duration="3586000" />
+      <workItem from="1673256226591" duration="52000" />
+      <workItem from="1673256283385" duration="434000" />
+      <workItem from="1673256723918" duration="147000" />
+      <workItem from="1673256958756" duration="50000" />
+      <workItem from="1673257016080" duration="253000" />
+      <workItem from="1673257280571" duration="50000" />
+      <workItem from="1673257337768" duration="3183000" />
+      <workItem from="1673264340771" duration="566000" />
+      <workItem from="1673782877657" duration="602000" />
+      <workItem from="1673790813461" duration="1383000" />
+      <workItem from="1673792720437" duration="16802000" />
+      <workItem from="1673815840176" duration="5859000" />
+      <workItem from="1673823087384" duration="2227000" />
+      <workItem from="1673826721257" duration="140000" />
+      <workItem from="1673854995523" duration="350000" />
+      <workItem from="1673870416350" duration="4153000" />
+      <workItem from="1674122721827" duration="36000" />
+      <workItem from="1674122776570" duration="88000" />
+      <workItem from="1674122910956" duration="122000" />
+      <workItem from="1674123040505" duration="9466000" />
+      <workItem from="1674134033306" duration="6573000" />
+      <workItem from="1674143564005" duration="11655000" />
+      <workItem from="1674211562246" duration="3455000" />
+    </task>
+    <task id="LOCAL-00001" summary="L">
+      <created>1670882050082</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670882050082</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Changes">
+      <created>1670970195892</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670970195892</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Changes">
+      <created>1670970712620</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670970712620</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Changes">
+      <created>1671292420180</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671292420180</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Changes">
+      <created>1671300926788</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671300926788</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="L" />
+    <MESSAGE value="Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

@@ -78,15 +78,24 @@ RAINY,
 FOGGY,
 SNOWY
 }
-class Human implements Sayable, Explainable, Thinkable, Doable, AbleToModify{
-- name: String
--currentEmotion: Emotion
-+Person(name: String, currentEmotion: Emotion)
+abstract Human{
+#name: String
+#currentEmotion: Emotion
+#modifiedPlant: boolean
++Human(name: String, currentEmotion: Emotion, modifiedPlant: boolean)
++setCurrentEmotion(Place place)
 +getName(): String
-+think(String name, String action, String durationOfThinking): String
-+do(String name, String action, String target): String
-+say(String name, String action): String
-+modifyPlant(Plant plant)
++equals(Object): boolean
++toString(): String
++hashCode(): int
+}
+class Znaika extends Human implements Sayable, Explainable, Thinkable, Doable, AbleToModify{
++Znaika(name: String, currentEmotion: Emotion, modifiedPlant: boolean)
++explain(String name, String action)
++say(String name, String action)
++think(String name, String action, String durationOfThinking)
++doTo(String name, String action, String target)
++modifyStuff(Modifiable modifiable)
 +equals(Object): boolean
 +toString(): String
 +hashCode(): int
@@ -137,4 +146,6 @@ class PlantJuice{
 +toString(): String
 +hashCode(): int
 }
+
+
 @enduml

@@ -1,8 +1,10 @@
 package plant;
 
 import java.util.Objects;
+
+import interfaces.Climbable;
 import interfaces.Modifiable;
-public class Plant implements Modifiable {
+public class Plant implements Modifiable, Climbable {
     private String name;
     private PlantJuice plantJuice;
 
@@ -25,6 +27,10 @@ public class Plant implements Modifiable {
         return name.equals(plant.name) && plantJuice.equals(plant.plantJuice);
     }
 
+    public void climb() {
+        System.out.println("Малыши взбираются на" + " " + name + " , чтобы обмазать шар");
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, plantJuice);
@@ -39,8 +45,8 @@ public class Plant implements Modifiable {
     }
 
     public void modify() {
-       plantJuice.flow(plantJuice);
-       plantJuice.thicken(plantJuice);
-       plantJuice.transformationIntoRubber(plantJuice);
+       plantJuice.flow();
+       plantJuice.thicken();
+       plantJuice.transformationIntoRubber();
     }
 }

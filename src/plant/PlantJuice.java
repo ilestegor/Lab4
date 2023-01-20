@@ -11,7 +11,7 @@ public class PlantJuice {
         this.levelOfDensity = levelOfDensity;
 
     }
-    public void flow(PlantJuice plantJuice){
+    public void flow(){
         switch (levelOfDensity){
             case LOW -> {
                 System.out.println("Человек порезал растение и сок вытикает быстро");
@@ -24,12 +24,14 @@ public class PlantJuice {
             }
         }
     }
-    public void thicken(PlantJuice plantJuice){
+    public void thicken(){
         System.out.println("Сок постепенно густеет");
     }
-    public void transformationIntoRubber(PlantJuice plantJuice){
+    public void transformationIntoRubber(){
         System.out.println("Сок превращается в резину, из которой можно делать мячи и колоши");
     }
+
+
 
     @Override
     public boolean equals(Object object) {

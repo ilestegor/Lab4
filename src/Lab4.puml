@@ -1,0 +1,469 @@
+@startuml
+!pragma layout smetana
+
+class Main{
++Main()
++main(String[] args)
+}
+
+Main ..> Event
+Main ..> Baby
+Main ..> ShortPerson
+Main ..> Znaika
+Main ..> Neznaika
+Main ..> Toropyjka
+Main ..> Syropchick
+Main ..> Gunka
+Main ..> Car
+Main ..> Breakage
+Main ..> Home
+Main ..> Arbour
+Main ..> Pump
+Main ..> Town
+Main ..> Plant
+Main ..> Doctor
+
+class Event{
+- eventName: String
+- emotion: String
++Event(eventName: String)
++resultEvent(eventName: String, emotion: String)
++getName(): String
++getEmotion(): String
++toString(): String
++hashCode(): int
++equals(Object): boolean
+}
+class Emotion{
+-typeOfEmotion: String
++Emotion(typeOfEmotion: String)
++getEmotion(): String
+}
+abstract class SmallPerson{
+- name: String
+- ability: String
++SmallPerson(name: String, ability: String)
++getName(): String
++getAbility(): String
++doStuff(String name, String ability): String
+}
+interface Dreamable{
++dream(String object))
+}
+interface PLayable{
++play()
+}
+interface Climbable{
++climb()
+}
+interface AbleToClimb{
++climb(Climbable climbable)
+}
+class Baby extends SmallPerson implements Doable, Dreamable, PLayable, AbleToCover, AbleToClimb{
+- currentEmotion: Emotion
++Baby(name: String)
++doStuff(String name, String ability)
++equals(Object): boolean
++collectJuice(PlantJuice plantjuice) + local class barrel
++dream(String object)
++play()
++cover(Coverable coverable)
++climb(PlantJuice plantjuice)
++toString(): String
++hashCode(): int
+}
+interface AbleToSee{
++see(String object)
+}
+interface Runnable{
++run(String destination)
+}
+interface Hearable{
++hear(String sound)
+}
+interface AbleToSee{
++see(String direction, String mood)
+}
+class ShortPerson extends SmallPerson implements AbleToSee, Runnable, Hearable, AbleToGrab, Doable, AbleToAsk{
+- currentEmotion: Emotion
++ShortPerson(name: String)
++doStuff(String name, String ability)
++see(String object)
++hear(String sound)
++run(String destination)
++see(String direction, String mood)
++ask(Askable askable)
++equals(Object): boolean
++toString(): String
++hashCode(): int
+}
+Emotion --o Baby
+Emotion --o ShortPerson
+Emotion --o Znaika
+
+
+interface Sayable{
++say(String name, String action): void
+}
+interface Thinkable{
++think(String name, String action, String durationOfThinking): void
+}
+interface Doable{
++do(String name, String action, String target): void
+}
+interface Explainable{
++explain(String name, String action): void
+}
+enum WeatherType{
+SUNNY,
+WINDY,
+RAINY,
+FOGGY,
+SNOWY
+}
+interface Encouterable{
++encounter()
+}
+abstract Human implements Encouterable, Doable{
+#name: String
+#currentEmotion: Emotion
++Human(name: String, currentEmotion: Emotion)
++setCurrentEmotion(Town town)
++do(name: String, target: String)
++getName(): String
++encounter()
++equals(Object): boolean
++toString(): String
++hashCode(): int
+}
+interface Transportable{
++transport()
+}
+interface AbleToAsk{
++ask(Askable askable)
+}
+interface Wishable{
++wish(String wish)
+}
+interface AbleToGrab{
++grab(Grabable grabable)
+}
+interface Shoutable{
++shout()
+}
+interface Checkable{
++check()
+}
+interface AbleToStir{
++stir(Stirable stirable)
+}
+interface AbleToCover{
++cover(Coverable coverable)
+}
+interface Tightable{
++tight()
+}
+interface AbleToTight{
++tightStuff()
+}
+class Znaika extends Human implements Sayable, Explainable, Thinkable, Doable, AbleToModify, AbleToStir, AbleToTight, Askable{
++Znaika(name: String, currentEmotion: Emotion, modifiedPlant: boolean)
++explain(String name, String action)
++say(String name, String action)
++think(String name, String action, String durationOfThinking)
++doTo(String name, String action, String target)
++modifyStuff(Modifiable modifiable)
++stir(Stirable stirable)
++cover(Coverable coverable)
++tight()
++ask()
++equals(Object): boolean
++toString(): String
++hashCode(): int
+}
+
+class Neznaika extends Human implements Transportable, AbleToAsk, Wishable, AbleToGrab, Shoutable, Grabable, Checkable, AbleToSee{
+-isInCar: boolean
+-isInjured: boolean
+-eyesOPened: boolean
+-isAtHome; boolean
++Neznaika(name: String, currentEmotion: Emotion, isInCar: boolean, eyesOPened: boolean)
++wish(String wish)
++ask(Askable askable)
++grab(Grabable grabable)
++shout()
++setEyesOPened(isAtHome)
++setIsInjured(Arbour arbour): boolean
++transport()
++check()
++checkIfPunched(ShortPerson shortPerson)
++see(String direction, String mood)
+}
+WeatherType --* Town
+interface AbleToModify{
++modify(Modifiable)
+}
+class Town{
+-name: String
+-weatherType: WeatherType
++Town(name: String, weatherType: WeatherType)
++equals(Object): boolean
++toString(): String
++hashCode(): int
+}
+Town ..> Znaika
+class Plant implements Modifiable, Climbable{
+-name: String
+-plantjuice: PlantJuice
++Plant(name: String, plantjuice: PlantJuice)
++lookAlike(String object)
++climb()
++equals(Object): boolean
++toString(): String
++hashCode(): int
+}
+interface Modifiable{
++modify()
+}
+Znaika --> Plant
+Plant --> Town
+enum Density{
+LOW,
+MEDIUM,
+HIGH
+}
+Density --* PlantJuice
+PlantJuice --* Plant
+interface Stirable{
++stir()
+}
+class PlantJuice implements Stirable{
+- color: String
+- levelOfDensity: Density
+- flowType: Density
++Juice(color: String, levelOfDensity: Density, flowType: Density)
++thicken(PlantJuice plantjuice)
++flow(PlantJuice plantjuice)
++transformIntoRubber(PlantJuice plantjuice): String
++stir()
++equals(Object): boolean
++toString(): String
++hashCode(): int
+}
+
+'Lab4
+interface AbleToDrive{
++drive(Drivable)
+}
+interface AbleToDrink{
++drink(String object, String amount)
+}
+class Syropchick extends Human implements AbleToDrive, AbleToDrink{
++Syropchick(name: String, currentEmotion: Emotion)
++drive(Drivable)
++drink(String object, String amount)
+}
+interface Drivable{
++drive()
+}
+Enum TankLevel{
+FULL,
+HALF,
+LOW,
+EMPTY
+}
+interface AbleToDestruct{
++destruct(Destructable)
+}
+interface Roll{
++rollTo(String place)
+}
+interface Fall{
++fallFrom(Fallable fallable, String resultOfFall)
+}
+class Car implements Drivable, AbleToDestruct, Roll, Fall{
+-model: String
+-locationOfVehicle: String
+-isInMotion: boolean
++Car(model: String, locationOfVehicle: String, isInMotion: boolean)
++validateTankLevel(TankLevel tankLevel)
++rollTo(String place)
++fallFrom(Fallable fallable, String resultOfFall)
++drive()
++setLocationOfVehicle(isInMotion): String location
+}
+TankLevel --* Car
+class Lever{
+-name: String
+-isPulled: boolean
++Lever(name: String, isPulled: boolean)
++setIsPulled(isInCar): boolean
+}
+class Pedal{
+-name: String
+-isPressed: boolean
++Pedal(name: String, isPressed :boolean)
++setIsPressed(isInCar): boolean
+}
+interface Grabable{
++grab()
+}
+class SteeringWheel implements Grabable{
+-name: String
+-isRotated: boolean
++SteeringWheel(name: String, isRotated: boolean)
++setIsRotated(isInCar):boolean
++grab()
+}
+Pedal --+ Car
+Lever --+ Car
+SteeringWheel --+ Car
+Car ..> TankLevelException
+class TankLevelException {
++TankLevelException(String message)
+}
+interface AbleToTransport{
++transport(Transportable transportable, String methodOfTransportation)
+}
+interface Askable{
++ask()
+}
+class Toropyjka extends Human implements AbleToTransport, Askable{
+-questionIsAsked: boolean
++Toropyjka(name: String, currentEmotion: Emotion, questionIsAsked: boolean)
++transport(Transportable transportable, String methodOfTransportation)
++ask()
+}
+abstract class Place{
+-name: String
++Place(name: String)
+}
+interface Fallable{
++fall()
+}
+class Breakage extends Place implements Fallable{
++Breakage(name: String)
++fall()
+}
+class Home extends Place{
++Home(name: String)
+-peopleAtHome: ArrayList<String>
+}
+interface Destructable{
++destructed()
+}
+class Arbour extends Place implements Destructable{
+-isDestructed: boolean
++Arbour(name: String, isDestructed: boolean)
++destructed()
+}
+interface AbleToCheck{
++check(Checkable checkable)
+}
+class Doctor implements AbleToCheck{
++Doctor(name: String, currentEmotion: Emotion)
++check(Checkable checkable)
+}
+
+interface AbleToPlay{
++play(Playable playable, String nameOfGame)
+}
+interface Punchable{
++punch(String personName)
+}
+class Gunka extends Human implements AbleToPlay, Wishable, Punchable{
+-currentMood: String
++Gunka(name: String, currentEmotion: Emotion, currentMood: String)
++play(Playable playable, String nameOfGame)
++wish(String wish)
++punch(String personName)
+}
+class Pump implements Bringable{
+-name: String
+-isInWork: boolean
++Pump(name: String, isInWork: boolean)
++bring()
++validateWorkOfPump(): String
++attachTo()
+}
+interface Bringable{
++bring()
+}
+interface AbleToBring{
++bring(Bringable bringable)
+}
+interface AbleToPump{
++pump(Pumpabale pumpable)
+}
+class Shpuntik extends Human implements AbleToBring, AbleToPump{
++Shpuntik(name: String, currentEmotion: Emotion)
++bring(Bringable bringable)
++pump(Pumpable pumpable)
+}
+interface Pumpable{
++pump()
+}
+interface Coverable{
++cover(Side sides)
+}
+Enum BubbleStat{
+BIG,
+MEDIUM,
+SMALL
+}
+Enum Side{
+TOP,
+BOTTOM,
+LEFT,
+RIGHT
+}
+class Bubble implements Pumpable, Coverable, Tightable{
+-name: String
+-madeOf: PlantJuice plantjuice
+-bubbleSize: BubbleStat bubbleStat
+-coverageArea: CoverageArea coverageArea
+-timeToPump: String time
+-isTighted: boolean
++Bubble(name: String, madeOf: PlantJuice plantjuice, bubbleSize: BubbleStat bubbleStat, timeToPump: String time, isTighted: boolean)
++validateBubbleCreation(Pump pump)
++pump()
++tight()
++cover(Side side)
++pop(bubbleSize): String
++setCoverageArea(bubbleSize)
++becomeBigger(String action, bubbleSize)
+}
+Side --* Bubble
+class BubbleCreationException{
++BubbleCreationException(String message)
+}
+PlantJuice --> Bubble
+Bubble ..> BubbleCreationException
+BubbleStat --* Bubble
+interface AbleToCollect{
++collect(Collectable collectable)
+}
+
+class Squad implements AbleToCollect, Doable{
+-name: String
+-bossName: String
++Squad(name: String, bossName: String)
++collect(Collectable collectable)
+}
+Squad --+ Neznaika
+interface Collectable{
++collect()
+}
+class RubberPipe{
+-name: String
++Pipe(name: String)
++getName(): String
+}
+RubberPipe ..* Pump
+class Fruit implements Collectable{
+-name: String
++Fruit(name: String)
++collect()
+}
+Fruit --* Plant
+@enduml
