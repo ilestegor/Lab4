@@ -1,14 +1,15 @@
 package person;
-import emotion.Emotion;
+import emotion.*;
 import place.Town;
-
+import food.*;
 public abstract class SmallPerson {
-    private String name;
+    protected String name;
     protected Emotion currentEmotion;
-
-    protected SmallPerson(String name, Emotion currentEmotion){
+    protected Mood currentMood;
+    protected SmallPerson(String name, Emotion currentEmotion, Mood currentMood){
         this.name = name;
         this.currentEmotion = currentEmotion;
+        this.currentMood = currentMood;
     }
 
     public void setCurrentEmotion(Town town) {
@@ -29,6 +30,12 @@ public abstract class SmallPerson {
                 currentEmotion.setTypeOfEmotion(" Ужасное");
             }
         }
+    }
+    public void setCurrentEmotion(Drink drink, ShortPerson shortPerson){
+       if (shortPerson.getAmountOfDrank() > 5){
+           currentMood = Mood.AMAZING;
+       }
+
     }
     public abstract void doStuff(String name, String ability, String target);
 

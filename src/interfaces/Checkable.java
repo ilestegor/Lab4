@@ -1,5 +1,7 @@
 package interfaces;
 
+import person.Human;
+
 public interface Checkable {
-    void check();
+    Human check(Human human);
 }

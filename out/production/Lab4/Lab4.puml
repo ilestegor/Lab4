@@ -8,12 +8,8 @@ class Main{
 
 Main ..> Event
 Main ..> Baby
+Main ..> Human
 Main ..> ShortPerson
-Main ..> Znaika
-Main ..> Neznaika
-Main ..> Toropyjka
-Main ..> Syropchick
-Main ..> Gunka
 Main ..> Car
 Main ..> Breakage
 Main ..> Home
@@ -84,8 +80,19 @@ interface Hearable{
 interface AbleToSee{
 +see(String direction, String mood)
 }
-class ShortPerson extends SmallPerson implements AbleToSee, Runnable, Hearable, AbleToGrab, Doable, AbleToAsk{
+class Drink{
+-name: String
++Drink(name: String)
+}
+enum Mood{
+HAPPY,
+SAD,
+ANGRY,
+AMAZING
+}
+class ShortPerson extends SmallPerson implements AbleToSee, Runnable, Hearable, AbleToGrab, Doable, AbleToAsk, AbleToDrive, AbleToDrink, AbleToTransport, Askable, AbleToPlay, Wishable, Punchable{
 - currentEmotion: Emotion
+-currentMood: Mood
 +ShortPerson(name: String)
 +doStuff(String name, String ability)
 +see(String object)
@@ -93,6 +100,13 @@ class ShortPerson extends SmallPerson implements AbleToSee, Runnable, Hearable, 
 +run(String destination)
 +see(String direction, String mood)
 +ask(Askable askable)
++drive(Drivable)
++drink(Drink drink, int: amount)
++transport(Transportable transportable, String methodOfTransportation)
++ask()
++play(Playable playable, String nameOfGame)
++wish(String wish)
++punch(String personName)
 +equals(Object): boolean
 +toString(): String
 +hashCode(): int
@@ -124,14 +138,37 @@ SNOWY
 interface Encouterable{
 +encounter()
 }
-abstract Human implements Encouterable, Doable{
-#name: String
-#currentEmotion: Emotion
-+Human(name: String, currentEmotion: Emotion)
+class Human implements Encouterable, Sayable, Explainable, Thinkable, AbleToModify, AbleToStir, AbleToTight, Askable, Transportable, AbleToAsk, Wishable, AbleToGrab, Shoutable, Grabable, Checkable, AbleToSee{
+-name: String
+-currentEmotion: Emotion
+-isInCar: boolean
+-isInjured: boolean
+-eyesOPened: boolean
+-isAtHome; boolean
++Human(name: String, currentEmotion: Emotion, isInCar: boolean, eyesOPened: boolean)
 +setCurrentEmotion(Town town)
 +do(name: String, target: String)
 +getName(): String
 +encounter()
++explain(String name, String action)
++say(String name, String action)
++think(String name, String action, String durationOfThinking)
++doTo(String name, String action, String target)
++modifyStuff(Modifiable modifiable)
++stir(Stirable stirable)
++cover(Coverable coverable)
++tight()
++ask()
++wish(String wish)
++ask(Askable askable)
++grab(Grabable grabable)
++shout()
++setEyesOPened(isAtHome)
++setIsInjured(Arbour arbour): boolean
++transport()
++check()
++checkIfPunched(ShortPerson shortPerson)
++see(String direction, String mood)
 +equals(Object): boolean
 +toString(): String
 +hashCode(): int
@@ -166,39 +203,7 @@ interface Tightable{
 interface AbleToTight{
 +tightStuff()
 }
-class Znaika extends Human implements Sayable, Explainable, Thinkable, Doable, AbleToModify, AbleToStir, AbleToTight, Askable{
-+Znaika(name: String, currentEmotion: Emotion, modifiedPlant: boolean)
-+explain(String name, String action)
-+say(String name, String action)
-+think(String name, String action, String durationOfThinking)
-+doTo(String name, String action, String target)
-+modifyStuff(Modifiable modifiable)
-+stir(Stirable stirable)
-+cover(Coverable coverable)
-+tight()
-+ask()
-+equals(Object): boolean
-+toString(): String
-+hashCode(): int
-}
 
-class Neznaika extends Human implements Transportable, AbleToAsk, Wishable, AbleToGrab, Shoutable, Grabable, Checkable, AbleToSee{
--isInCar: boolean
--isInjured: boolean
--eyesOPened: boolean
--isAtHome; boolean
-+Neznaika(name: String, currentEmotion: Emotion, isInCar: boolean, eyesOPened: boolean)
-+wish(String wish)
-+ask(Askable askable)
-+grab(Grabable grabable)
-+shout()
-+setEyesOPened(isAtHome)
-+setIsInjured(Arbour arbour): boolean
-+transport()
-+check()
-+checkIfPunched(ShortPerson shortPerson)
-+see(String direction, String mood)
-}
 WeatherType --* Town
 interface AbleToModify{
 +modify(Modifiable)
@@ -258,11 +263,7 @@ interface AbleToDrive{
 interface AbleToDrink{
 +drink(String object, String amount)
 }
-class Syropchick extends Human implements AbleToDrive, AbleToDrink{
-+Syropchick(name: String, currentEmotion: Emotion)
-+drive(Drivable)
-+drink(String object, String amount)
-}
+
 interface Drivable{
 +drive()
 }
@@ -328,12 +329,7 @@ interface AbleToTransport{
 interface Askable{
 +ask()
 }
-class Toropyjka extends Human implements AbleToTransport, Askable{
--questionIsAsked: boolean
-+Toropyjka(name: String, currentEmotion: Emotion, questionIsAsked: boolean)
-+transport(Transportable transportable, String methodOfTransportation)
-+ask()
-}
+
 abstract class Place{
 -name: String
 +Place(name: String)
@@ -371,13 +367,7 @@ interface AbleToPlay{
 interface Punchable{
 +punch(String personName)
 }
-class Gunka extends Human implements AbleToPlay, Wishable, Punchable{
--currentMood: String
-+Gunka(name: String, currentEmotion: Emotion, currentMood: String)
-+play(Playable playable, String nameOfGame)
-+wish(String wish)
-+punch(String personName)
-}
+
 class Pump implements Bringable{
 -name: String
 -isInWork: boolean
@@ -434,7 +424,7 @@ class Bubble implements Pumpable, Coverable, Tightable{
 +becomeBigger(String action, bubbleSize)
 }
 Side --* Bubble
-class BubbleCreationException extends Exception{
+class BubbleCreationException{
 +BubbleCreationException(String message)
 }
 PlantJuice --> Bubble
@@ -449,8 +439,8 @@ class Squad implements AbleToCollect, Doable{
 -bossName: String
 +Squad(name: String, bossName: String)
 +collect(Collectable collectable)
+Squad --+ Human
 }
-Squad --+ Neznaika
 interface Collectable{
 +collect()
 }

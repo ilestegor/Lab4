@@ -1,5 +1,5 @@
 package interfaces;
-
+import dream.*;
 public interface Dreamable {
-    String dream(String object);
+    void dream(Dream dream);
 }

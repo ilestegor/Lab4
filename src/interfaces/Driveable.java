@@ -1,5 +1,7 @@
 package interfaces;
 
+import person.Human;
+
 public interface Driveable {
-    void drive();
+    void drive(Human human);
 }

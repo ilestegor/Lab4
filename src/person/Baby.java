@@ -4,13 +4,14 @@ import java.util.Objects;
 import bubble.Bubble;
 import bubble.BubbleStat;
 import bubble.Side;
+import dream.Dream;
 import emotion.*;
 import interfaces.*;
 
 public class Baby extends SmallPerson implements Playable, AbleToClimb, AbleToCover, Dreamable, Wishable {
 
-    public Baby(String name, Emotion currentEmotion){
-        super(name, currentEmotion);
+    public Baby(String name, Emotion currentEmotion, Mood currentMood){
+        super(name, currentEmotion, currentMood);
     }
     public void doStuff(String name, String ability, String target){
         if (target.isEmpty()){
@@ -37,9 +38,14 @@ public class Baby extends SmallPerson implements Playable, AbleToClimb, AbleToCo
         System.out.printf(getName() + " ");
         coverable.cover(Side.BOTTOM);
     }
-    public String dream(String object){
-        System.out.println(object);
-        return object;
+    public void dream(Dream dream){
+        if (dream.setDreamProbability() > 50.0){
+            System.out.println(dream.getDreamDescription());
+            dream.setWillHappen(true);
+        } else {
+            dream.setWillHappen(false);
+            System.out.println(name + " не осуществит свою мечту");
+        }
     }
     @Override
     public boolean equals(Object object) {

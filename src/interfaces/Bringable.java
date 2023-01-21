@@ -1,5 +1,5 @@
 package interfaces;
-
+import person.*;
 public interface Bringable {
-    String bring();
+    String bring(Human human);
 }

@@ -1,14 +1,17 @@
 package bubble;
 
 import interfaces.Bringable;
+import person.Human;
 
 
 public class Pump implements Bringable {
     private String name;
     private boolean isInWork;
-    public Pump(String name, boolean isInWork){
+    private Human pumpOwner;
+    public Pump(String name, boolean isInWork, Human pumpOwner){
         this.name = name;
         this.isInWork = isInWork;
+        this.pumpOwner = pumpOwner;
     }
 
    public boolean validateWorkOfPump(){
@@ -18,8 +21,10 @@ public class Pump implements Bringable {
             return false;
         }
     }
-    public String bring() {
+    public String bring(Human human) {
+        pumpOwner = human;
         return " принес насос";
+
     }
 
     public void attachTo(){

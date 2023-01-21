@@ -1,5 +1,7 @@
 package interfaces;
 
+import person.Human;
+
 public interface Transportable {
-    String transport();
+    String transport(Human human);
 }
